@@ -57,14 +57,14 @@ def main():
 
         game_verdict = winner_validator(player1, player2)
         if game_verdict is None:
-            print(f"{player1.choice.name} and {player2.choice.name}. It's a TIE! ")
+            print(f"{player1.choice.name} {player1.choice.symbol}  and {player2.choice.name} {player1.choice.symbol} . It's a TIE! ")
             write_round_results(game_verdict, round_num)
         elif game_verdict.player_name == player1.player_name:
             write_round_results(game_verdict, round_num)
-            print(f"{player1.choice.name} beats {player2.choice.name}. Player 1 wins!")
+            print(f"{player1.choice.name} {player1.choice.symbol}  beats {player2.choice.name} {player2.choice.symbol}. Player 1 wins!")
         else:
             write_round_results(game_verdict, round_num)
-            print(f"{player2.choice.name} beats {player1.choice.name}. Player 2 wins!")
+            print(f"{player2.choice.name} {player2.choice.symbol}  beats {player1.choice.name} {player1.choice.symbol}. Player 2 wins!")
 
         num_games -= 1
         round_num += 1
@@ -123,9 +123,12 @@ def write_round_results(game_verdict, round_num):
 
 # Writes the results of the entire game
 def write_game_results(player1, player2, num_games):
+    results1 = f"{player1.player_name} Stats\nWins: {player1.wins}\nLoses: {player1.loses}\nTies: {player1.ties}"
+    results2 = f"{player1.player_name} Stats\nWins: {player2.wins}\nLoses: {player2.loses}\nTies: {player2.ties}"
+    
     with open("results.txt", "a") as f:
-        f.write(f"\n----- GAME RESULTS -----\nPlayer 1 Stats:\nWins: {player1.wins}\nLoses: {player1.loses}\nTies: {player1.ties}\n------------------------\n\n")
-    print(f"\n----- GAME RESULTS -----\nPlayer 1 Stats:\nWins: {player1.wins}\nLoses: {player1.loses}\nTies: {player1.ties}\n------------------------\n\n")
+        f.write(f"\n----- GAME RESULTS -----\n{results1}\n\n{results2}\n------------------------\n\n")
+    print(f"\n----- GAME RESULTS -----\n{results1}\n\n{results2}\n------------------------\n\n")
 
 
 main()
