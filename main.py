@@ -122,6 +122,7 @@ def write_round_results(round_winner, round_num):
         with open("results.txt", "a") as f:
             f.write(f"Round {round_num} winner: {round_winner.player_name} - {round_winner.choice.description}\n")
 
+
 # Writes the game results to a file and prints results to the console 
 def write_game_results(player1, player2):
     p1_results = f"{player1.player_name} Stats\nWins: {player1.wins}\nLoses: {player1.loses}\nTies: {player1.ties}"
