@@ -34,7 +34,7 @@ Options that work:
 
 
 ## Notes
-> There are parts of the code I had to add because of my school assignment where they wanted me to use specific thing. 
+> There are a few parts of the code I had to add because of my school assignment where they wanted me to use specific things. 
 ```py
 class Player:
     self.valid_input = ["r", "p", "s"]
