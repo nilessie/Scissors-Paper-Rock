@@ -9,12 +9,8 @@ class Player:
         self.loses = 0
         self.ties = 0
         self.valid_input = ["r", "p", "s"]
-        self.valid_symbols = ["✂️", "📄", "🪨"] 
         self.num_rounds = num_rounds
     
-    # Used to demonstrate polymorphism
-    def __str__(self):
-        return f"{self.player_name} (W:{self.wins} L:{self.loses} T:{self.ties})"
 
 class SPR:
     def __init__(self, id, name, symbol, beats, description):
@@ -23,10 +19,6 @@ class SPR:
         self.symbol = symbol
         self.beats = beats
         self.description = description
-
-    # Used to demonstrate polymorphism
-    def __str__(self):
-        return f"{self.symbol} {self.name}"
 
 
 def main():
@@ -141,5 +133,6 @@ def write_game_results(player1, player2):
         f.write(f"\n----- GAME RESULTS -----\n\n{winner}\n\n{p1_results}\n\n{p2_results}\n------------------------\n\n")
     
 
-main()
+if __name__ == "__main__":
+    main()
 
