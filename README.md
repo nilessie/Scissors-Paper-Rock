@@ -33,20 +33,3 @@ Options that work:
 6. It will output the results to the console and write the results to a results.txt file in the working directory.
 
 
-## Notes
-> There are a few parts of the code I had to add because of my school assignment where they wanted me to use specific things. 
-```py
-class Player:
-    self.valid_input = ["r", "p", "s"]
-    self.valid_symbols = ["✂️", "📄", "🪨"] 
-
-    def __str__(self):
-        return f"{self.player_name} (W:{self.wins} L:{self.loses} T:{self.ties})"
-```
-```py
-class SPR:
-    self.description = description
-
-    def __str__(self):
-        return f"{self.symbol} {self.name}"
-```
